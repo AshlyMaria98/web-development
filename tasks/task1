@@ -3,7 +3,8 @@
 <head>
     <title>
         task 1
-    </title>
+    </title
+</head>
     <body>
         <h1>Build.myweb</h1>
         <h2>Build.myweb</h12>
@@ -13,5 +14,5 @@
         <h6>Build.myweb</h6>
 
     </body>
-</head>
+
 </html>

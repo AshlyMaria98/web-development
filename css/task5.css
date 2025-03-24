@@ -1,0 +1,7 @@
+p {
+    background-color: rgb(41, 106, 209);
+    padding: 50px;
+    border: 10px solid black;
+    height: 70px;
+    width: 500px; 
+}

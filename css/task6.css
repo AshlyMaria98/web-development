@@ -1,0 +1,17 @@
+.outer-box {
+    width: 200px;
+    height: 200px;
+    background-color: orange;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.inner-box {
+    width: 60px;
+    height: 60px;
+    background-color: darkgreen;
+    position: absolute;
+    top: 70px;
+    left: 70px;
+}

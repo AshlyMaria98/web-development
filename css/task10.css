@@ -1,9 +1,18 @@
-.center{
+.center {
     text-align: center;
 }
 .left{
-    text-align: left;
+    text-align: left; 
 }
 .right{
+    text-align: right;
+}
+#p1{
+    text-align: center;
+}
+#p2{
+    text-align: left;
+}
+#p3{
     text-align: right;
 }

@@ -84,42 +84,47 @@
         <button type="button" class="btn btn-primary" onclick="window.open('https://t.me/pygrammers_official', '_blank')">Telegram</button>
     </div><br>
 
-    <!-- Registration Form -->
-    <div class="container mt-5" id="form" style="padding-top: 4cm;">
-        <div class="card p-4">
-            <h4 class="text-center"><strong>Form:</strong></h4>
-            <form>
-                <div class="mb-3">
-                    <label class="form-label">Name</label>
-                    <input type="text" class="form-control" placeholder="Enter your name">
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Mobile number</label>
-                    <input type="tel" class="form-control" placeholder="Enter your mobile number">
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Email address</label>
-                    <input type="email" class="form-control" placeholder="Enter your email">
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Company / Institution name</label>
-                    <input type="text" class="form-control" placeholder="Enter your company/institution name">
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Upload a short video or handwritten sheet</label>
-                    <input type="file" class="form-control">
-                </div>
-                <div class="mb-3">
-                    <select class="form-select">
-                        <option selected>Have you attended any events by Pygrammers before?!</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-primary w-100">Submit form</button>
-            </form>
-        </div>
-    </div><br>
+    <!--  Registration Form -->
+<div class="container mt-5" id="form">
+  <div class="form-container p-4 border rounded shadow-sm bg-light">
+    <div class="form-title mb-4 text-center fs-4 fw-bold">Form:</div>
+    <form>
+      <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control" placeholder="Enter your name">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Mobile number</label>
+        <input type="text" class="form-control" placeholder="Enter your mobile number">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Email address</label>
+        <input type="email" class="form-control" placeholder="Enter your email">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Company / Institution name</label>
+        <input type="text" class="form-control" placeholder="Enter your company/institution name">
+      </div>
+      <div class="mb-3">
+        <label class="form-label small-text">
+          Upload a short video or image of handwritten sheet showing your interest to 
+          <a href="#">join build.myweb</a>
+        </label>
+        <input class="form-control" type="file">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Have you attended any events by Pygrammers before?!</label>
+        <select class="form-select">
+          <option selected disabled>Choose an option</option>
+          <option>Yes</option>
+          <option>No</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Submit form</button>
+    </form>
+  </div>
+</div>
+
 
   <!-- Mentors Section -->
 <div class="container mt-5">

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mind Dots</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #faf9f7;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    /* Navbar */
+    nav.navbar {
+      background: transparent;
+      padding: 1rem 2rem;
+    }
+    nav.navbar .navbar-brand {
+      font-weight: 600;
+      color: #f7a8b8;
+      font-size: 1.6rem;
+    }
+    nav.navbar .nav-link {
+      color: #555;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    nav.navbar .nav-link:hover {
+      color: #f7a8b8;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      padding: 3rem 2rem;
+      background: #fff;
+      border-radius: 2rem;
+      box-shadow: 0 10px 30px rgba(247, 168, 184, 0.2);
+      margin: 2rem auto;
+      max-width: 1100px;
+    }
+    .hero-text {
+      max-width: 520px;
+    }
+    .hero-text h1 {
+      font-weight: 700;
+      font-size: 2.8rem;
+      color: #f7a8b8;
+      margin-bottom: 1rem;
+    }
+    .hero-text p {
+      font-weight: 400;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      color: #666;
+    }
+    .btn-primary {
+      background: #f7a8b8;
+      border: none;
+      padding: 0.75rem 2rem;
+      font-weight: 600;
+      border-radius: 50px;
+      transition: background 0.3s ease;
+      box-shadow: 0 5px 15px rgba(247, 168, 184, 0.4);
+    }
+    .btn-primary:hover {
+      background: #e17b8d;
+      box-shadow: 0 7px 20px rgba(98, 71, 234, 0.5);
+    }
+
+    .hero-img img {
+      width: 100%;
+      border-radius: 1.5rem;
+      box-shadow: 0 15px 40px rgba(247, 168, 184, 0.3);
+    }
+
+    /* Features Section */
+    #features {
+      max-width: 1100px;
+      margin: 3rem auto 5rem auto;
+      padding: 0 2rem;
+    }
+    #features h2 {
+      color: #f7a8b8;
+      text-align: center;
+      margin-bottom: 3rem;
+      font-weight: 700;
+      font-size: 2.5rem;
+    }
+    .feature-card {
+      background: #fff;
+      border-radius: 1.5rem;
+      padding: 2rem;
+      box-shadow: 0 8px 30px rgba(247, 168, 184, 0.2);
+      transition: transform 0.3s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(247, 168, 184, 0.3);
+    }
+    .feature-icon {
+      background: #e9e5ff;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2.5rem;
+      color: #f7a8b8;
+      margin-bottom: 1rem;
+      user-select: none;
+    }
+    .feature-card h5 {
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .feature-card p {
+      color: #666;
+      font-weight: 400;
+    }
+
+    /* Contact Section */
+    #contact {
+      background: #fff;
+      border-radius: 2rem;
+      box-shadow: 0 10px 40px rgba(247, 168, 184, 0.2);
+      max-width: 600px;
+      margin: 0 auto 4rem auto;
+      padding: 3rem 2rem;
+    }
+    #contact h2 {
+      text-align: center;
+      color: #f7a8b8;
+      margin-bottom: 2rem;
+      font-weight: 700;
+      font-size: 2rem;
+    }
+    #contact input,
+    #contact textarea {
+      border-radius: 1rem;
+      border: 1.5px solid #ccc;
+      padding: 0.8rem 1rem;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+    #contact input:focus,
+    #contact textarea:focus {
+      outline: none;
+      border-color: #f7a8b8;
+      box-shadow: 0 0 8px rgba(247, 168, 184, 0.4);
+    }
+    #contact button {
+      width: 100%;
+      border-radius: 50px;
+      background: #f7a8b8;
+      border: none;
+      padding: 0.8rem;
+      font-weight: 600;
+      color: white;
+      font-size: 1.1rem;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(247, 168, 184, 0.4);
+      transition: background 0.3s ease;
+    }
+    #contact button:hover {
+      background:#e17b8d;
+      box-shadow: 0 7px 20px rgba(98, 71, 234, 0.5);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1.5rem 0;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+   
+
+    /* Scroll to Top Button */
+    #topBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #f7a8b8;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 1.8rem;
+      padding: 0.4rem 0.7rem;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 5px 15px rgba(247, 168, 184, 0.4);
+      transition: background 0.3s ease;
+      z-index: 9999;
+    }
+    #topBtn:hover {
+      background: #e17b8d;
+    }
+
+    /* Responsive */
+    @media (max-width: 991px) {
+      .hero {
+        flex-direction: column;
+        padding: 2rem 1rem;
+      }
+      .hero-img {
+        margin-top: 2rem;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+
+  <div class="container">
+    <a class="navbar-brand" href="#">Mind Dots</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item ms-2">
+          <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</button>
+
+        </li>
+        <li class="nav-item ms-2">
+          <button class="btn btn-outline-secondary btn-sm" onclick="downloadJournal()">Download</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Hero Section -->
+  <section class="hero mt-5 pt-5">
+    <div class="hero-text">
+      <h1>Fuel Your Mind, One Page at a Time</h1>
+      <p>A simple, clean digital journal to help you reflect, reset, and grow every day.</p>
+      <a href="#contact" class="btn btn-primary">Get Started</a>
+    </div>
+    <div class="hero-img ms-4" style="max-width: 500px;">
+<img src="Aesthetic Digital Journal with Motivating Quotes.jfif" class="img-fluid rounded" alt="Journal App Image">
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features">
+    <h2>Why Choose Mind Dots?</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="feature-card text-center p-4">
+          <div class="feature-icon">📖</div>
+          <h5>Guided Prompts</h5>
+          <p>Thoughtful daily questions to reflect and realign your thoughts.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card text-center p-4">
+          <div class="feature-icon">🌤️</div>
+          <h5>Mood Tracker</h5>
+          <p>Understand your emotional patterns with simple tracking tools.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card text-center p-4">
+          <div class="feature-icon">🎨</div>
+          <h5>Clean Interface</h5>
+          <p>Minimal and calming design for a clutter-free journaling space.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="my-5">
+    <h2>Get In Touch</h2>
+    <form class="mx-auto" style="max-width: 400px;">
+      <div class="mb-3">
+        <input type="text" placeholder="Your Name" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <input type="email" placeholder="Your Email" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <textarea rows="4" placeholder="Your Message" class="form-control"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Mind Dots Journal. All rights reserved.
+  </footer>
+ <!-- Sign Up Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content rounded-4">
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold" id="signupModalLabel">Sign Up</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body px-4">
+        <form>
+          <div class="mb-3">
+            <label for="nameInput" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="nameInput" placeholder="Enter your name" required>
+          </div>
+          <div class="mb-3">
+            <label for="emailInput" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="emailInput" placeholder="Enter your email" required>
+          </div>
+          <div class="mb-3">
+            <label for="dobInput" class="form-label">Date of Birth</label>
+            <input type="date" class="form-control" id="dobInput" required>
+          </div>
+          <div class="mb-3">
+            <label for="phoneInput" class="form-label">Phone Number</label>
+            <input type="tel" class="form-control" id="phoneInput" placeholder="Enter your phone number" required>
+          </div>
+          <div class="mb-3">
+            <label for="passwordInput" class="form-label">Password</label>
+            <input type="password" class="form-control" id="passwordInput" placeholder="Enter password" required>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Scroll to Top Button -->
+  <button id="topBtn" title="Back to top">↑</button>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Scroll to Top JS -->
+  <script>
+    const topBtn = document.getElementById('topBtn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        topBtn.style.display = 'block';
+      } else {
+        topBtn.style.display = 'none';
+      }
+    });
+    topBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+  <script>
+  function showSignUp() {
+    alert("Thank you for signing up for Mind Dots!");
+  }
+
+  function downloadJournal() {
+    alert("Download started!");
+  }
+</script>
+
+</body>
+</html>
